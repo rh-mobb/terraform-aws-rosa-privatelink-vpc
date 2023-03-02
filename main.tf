@@ -61,7 +61,7 @@ resource "aws_vpc_endpoint_route_table_association" "vpc_endpoint_association" {
   vpc_endpoint_id = aws_vpc_endpoint.s3.id
 }
 
-resource "aws_ec2_transit_gateway_vpc_attachment" "rosa_vpc_attachement" {
+resource "aws_ec2_transit_gateway_vpc_attachment" "rosa_vpc_attachment" {
   count = var.transit_gateway.peer ? 1 : 0
   subnet_ids         = module.this.private_subnets
   transit_gateway_id = var.transit_gateway.transit_gateway_id
